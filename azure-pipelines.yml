@@ -26,7 +26,6 @@ steps:
 
   - task: CopyFiles@2
     inputs:
-      sourceFolder: 'template'
       contents: '*.tgz'
       targetFolder: $(Build.ArtifactStagingDirectory)
     displayName: 'Copy Package'
