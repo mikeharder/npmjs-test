@@ -1,0 +1,35 @@
+trigger:
+  - master
+
+pool:
+  vmImage: 'ubuntu-16.04'
+
+variables:
+  node.version: '10.x'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '$(node.version)'
+    displayName: 'Install Node.js $(node.version)'
+
+  - task: Npm@1
+    inputs:
+      command: 'install'
+    displayName: 'npm install'
+
+  - task: Npm@1
+    inputs:
+      command: 'custom'
+      customCommand: 'pack'
+    displayName: 'npm pack'
+
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: 'template'
+      contents: '*.tgz'
+      targetFolder: $(Build.ArtifactStagingDirectory)
+    displayName: 'Copy Package'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Package'
