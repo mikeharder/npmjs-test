@@ -1,16 +1,16 @@
 {
   "name": "mikeharder-test",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Test package for Mike Harder",
   "main": "index.js",
   "author": "Mike Harder",
   "license": "ISC",
-  "homepage": "http://github.com/azure/azure-sdk-for-node",
+  "homepage": "https://github.com/mikeharder/npmjs-test",
   "repository": {
     "type": "git",
-    "url": "https://github.com/azure/azure-sdk-for-node.git"
+    "url": "https://github.com/mikeharder/npmjs-test.git"
   },
   "bugs": {
-    "url": "http://github.com/Azure/azure-sdk-for-node/issues"
+    "url": "https://github.com/mikeharder/npmjs-test/issues"
   }
 }
